@@ -46,7 +46,8 @@ function add_session($index, $value)
     $_SESSION[$index] = $value;
 }
 
-function get_session($index){
+function get_session($index)
+{
     if (isset($_SESSION[$index])) {
         return $_SESSION[$index];
     }else{
@@ -54,7 +55,8 @@ function get_session($index){
     }
 }
 
-function post($index){
+function post($index)
+{
     if (isset($_POST[$index])) {
         return htmlspecialchars(trim($_POST[$index]));
     }else{
@@ -62,7 +64,8 @@ function post($index){
     }
 }
 
-function get($index){
+function get($index)
+{
     if (isset($_GET[$index])) {
         return htmlspecialchars(trim($_GET[$index]));
     }else{
@@ -70,10 +73,38 @@ function get($index){
     }
 }
 
-function get_cookie($index){
+function get_cookie($index)
+{
     if (isset($_COOKIE[$index])) {
         return trim($_COOKIE[$index]);
     }else{
         return false;
     }
+}
+
+function model($modelName, $pageData = [], $data_process = null)
+{
+    global $db;
+
+    if ($data_process != null) $process = $data_process;
+    $data = $pageData;
+
+    if (file_exists(BASEDIR.'/model/' . $modelName . '.php')) {
+        $return = require BASEDIR . '/model/' . $modelName . '.php';
+        return $return;
+    }else{
+        return false;
+    }
+}
+
+function redirect($link)
+{
+    header('Location: ' .URL. $link);
+}
+
+function url($url)
+{
+    global $config;
+
+    return URL.$config['lang'].'/'.$url;
 }

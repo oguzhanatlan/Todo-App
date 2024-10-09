@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 session_start();
 
@@ -8,7 +7,6 @@ require_once __DIR__.'/config/config.php';
 if (DEV_MODE == true){
     error_reporting(E_ALL);
 
-    ini_set('error_reporting', true);
 }else{
     error_reporting(0);
     ini_set('error_reporting', false);
@@ -52,3 +50,6 @@ require_once BASEDIR.'/language/' . $config['lang'] . '.php';
     }else{
         echo 'Sayfa Bulunamadı';
     }
+
+if (isset($_SESSION['error'])) $_SESSION['error'] = null;
+if (isset($_SESSION['post'])) $_SESSION['post'] = null;
