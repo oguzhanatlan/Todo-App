@@ -107,7 +107,6 @@
                 </div>
             </div>
         </div>
-        </div>
 
         <!-- Main Footer -->
         <?php view('static/footer'); ?>

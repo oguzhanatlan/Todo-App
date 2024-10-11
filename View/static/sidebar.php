@@ -54,13 +54,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?php url('todo/add')?>" class="nav-link active">
+                            <a href="<?php echo url('todo/add')?>" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Yeni Ekle</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php url('todo/list')?>" class="nav-link">
+                            <a href="<?php echo url('todo/list')?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Listele</p>
                             </a>
@@ -77,13 +77,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?php url('category/add')?>" class="nav-link active">
+                            <a href="<?php echo url('categories/add')?>" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Yeni Ekle</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php url('category/list')?>" class="nav-link">
+                            <a href="<?php echo url('categories/list')?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Listele</p>
                             </a>

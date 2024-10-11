@@ -2,7 +2,7 @@
 
 const BASEDIR = 'C:\xampp\htdocs\todoapp';
 const URL = 'http://localhost/todoapp/';
-const DEV_MODE = true;
+const DEV_MODE = false;
 
 try {
     $db = new PDO('mysql:host=localhost;dbname=todoapp;', 'root', '');

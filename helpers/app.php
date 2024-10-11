@@ -55,10 +55,17 @@ function get_session($index)
     }
 }
 
+function filter($field)
+{
+  return is_array($field)
+      ? array_map('filter', $field)
+      : htmlspecialchars(trim($field));
+}
+
 function post($index)
 {
     if (isset($_POST[$index])) {
-        return htmlspecialchars(trim($_POST[$index]));
+        return filter($_POST[$index]);
     }else{
         return false;
     }
@@ -67,7 +74,7 @@ function post($index)
 function get($index)
 {
     if (isset($_GET[$index])) {
-        return htmlspecialchars(trim($_GET[$index]));
+        return filter($_GET[$index]);
     }else{
         return false;
     }
@@ -99,7 +106,9 @@ function model($modelName, $pageData = [], $data_process = null)
 
 function redirect($link)
 {
-    header('Location: ' .URL. $link);
+    global $config;
+
+    header('Location: ' .URL.$config['lang'].'/'.$link);
 }
 
 function url($url)
@@ -107,4 +116,11 @@ function url($url)
     global $config;
 
     return URL.$config['lang'].'/'.$url;
+}
+
+function _p($data)
+{
+    echo '<pre style="position: absolute; left: 0; top: 0; z-index: 999999; width: 100%; height: 600px; background: #1d1d1d; color: greenyellow;">';
+    print_r($data);
+    echo '</pre>';
 }

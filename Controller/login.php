@@ -28,7 +28,6 @@ if(route(0) == 'login'){
                 'type' => $return['type'] ?? ''
             ]);
         }
-
     }
 
     view('auth/login');
