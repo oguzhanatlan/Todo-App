@@ -56,6 +56,21 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group">
+                                            <label for="status">Durum</label>
+                                            <select class="form-control" name="status" id="status">
+                                                    <option value="a">Aktif</option>
+                                                    <option value="p">Pasif</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="progress">İlerleme</label>
+                                            <input type="range" class="form-control" name="color" id="progress" min="0" max="100">
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
                                             <label for="color">Renk</label>
                                             <input type="color" class="form-control" name="color" id="color" value="#007bff">
                                         </div>
@@ -109,8 +124,8 @@
 <script src="<?php echo assets('plugins/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
 
 <!-- AdminLTE App -->
-<script src="<?php echo assets('plugins/sweetalert2/sweetalert2.all.js')?>"></script>
 <script src="<?php echo assets('js/adminlte.min.js')?>"></script>
+<script src="<?php echo assets('plugins/sweetalert2/sweetalert2.all.js')?>"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js" integrity="sha512-lTLt+W7MrmDfKam+r3D2LURu0F47a3QaW5nF0c6Hl0JDZ57ruei+ovbg7BrZ+0bjVJ5YgzsAWE+RreERbpPE1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
@@ -124,6 +139,8 @@
         let description = document.getElementById('description').value;
         let category_id = document.getElementById('category_id').value;
         let color = document.getElementById('color').value;
+        let status = document.getElementById('status').value;
+        let progress = document.getElementById('progress').value;
         let start_date = document.getElementById('start_date').value;
         let end_date = document.getElementById('end_date').value;
         let start_date_time = document.getElementById('start_date_time').value;
@@ -135,6 +152,8 @@
         formData.append('description', description)
         formData.append('category_id', category_id)
         formData.append('color', color)
+        formData.append('status', status)
+        formData.append('progress', progress)
         formData.append('start_date', start_date)
         formData.append('end_date', end_date)
         formData.append('start_date_time', start_date_time)
